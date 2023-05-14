@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question / Answering Survey - API</title>
+</head>
+<body>
+	<h1> Question / Answering Survey</h1>
+
+	<table>
+		<tr>
+			<th>Question</th>
+			<th>Answer</th>
+			<th>Type</th>
+			<th>Action</th>
+		</tr>
+		{% for row in data %}
+		<tr>
+			<td>{{ row[1] }}</td>
+			<td>{{ row[2] }}</td>
+			<td>{{ row[3] }}</td>
+			<td>
+				<a href="{{ url_for('modify', id=row[0]) }}">Modify</a>
+				<a href="{{ url_for('remove', id=row[0]) }}">Remove</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+| 
+	<a href="{{ url_for('insert') }}">Insert new record</a> | <a href="{{ url_for('json') }}">Show records</a></body>
+</html>

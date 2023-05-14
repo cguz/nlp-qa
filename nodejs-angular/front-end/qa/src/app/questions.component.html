@@ -1,0 +1,16 @@
+<h1>Questions</h1>
+<ul>
+  <li *ngFor="let question of questions">
+    <input type="text" [(ngModel)]="question.question">
+    <input type="text" [(ngModel)]="question.answer">
+    <input type="text" [(ngModel)]="question.type">
+    <button (click)="updateQuestion(question)">Save</button>
+    <button (click)="deleteQuestion(question)">Delete</button>
+  </li>
+</ul>
+<div>
+  <input type="text" [(ngModel)]="newQuestion.question" placeholder="Question">
+  <input type="text" [(ngModel)]="newQuestion.answer" placeholder="Answer">
+  <input type="text" [(ngModel)]="newQuestion.type" placeholder="Type">
+  <button (click)="addQuestion()">Add</button>
+</div>

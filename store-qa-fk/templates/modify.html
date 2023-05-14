@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question / Answering Survey - API</title>
+</head>
+<body>
+	<h1>Modify record {{ data[0] }}</h1>
+
+	<form action="{{ url_for('modify', id=data[0]) }}" method="post">
+		<label for="question">Question:</label>
+		<input type="text" id="question" name="question" value="{{ data[1] }}"><br>
+
+		<label for="answer">Answer:</label>
+		<input type="text" id="answer" name="answer" value="{{ data[2] }}"><br>
+
+		<label for="question_type">Type:</label>
+		<input type="text" id="question_type" name="question_type" value="{{ data[3] }}"><br>
+
+		<input type="submit" value="Modify">
+	</form>
+
+	<a href="{{ url_for('home') }}">Back to home page</a>
+</body>
+</html>
